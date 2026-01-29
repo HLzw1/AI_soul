@@ -31,7 +31,9 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
         </div>
 
         <div class="navbar-end">
-            <button class="btn btn-ghost text-lg">登录</button>
+            <RouterLink :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg">
+              登录
+            </RouterLink>
         </div>
 
       </nav>
@@ -46,27 +48,26 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
         <ul class="menu w-full grow">
           <!-- List item -->
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="首页">
+            <RouterLink :to="{name: 'homepage-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="首页">
               <!-- Home icon -->
               <HomepageIcon />
               <span class="is-drawer-close:hidden text-base whitespace-nowrap ml-2">首页</span>
-            </button>
+            </RouterLink>
           </li>
           <!-- List item -->
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="好友">
+            <RouterLink  :to="{name: 'friend-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="好友">
               <!-- Friend icon -->
               <FriendIcon />
               <span class="is-drawer-close:hidden text-base whitespace-nowrap ml-2">好友</span>
-            </button>
+            </RouterLink>
           </li>
           <!-- List item -->
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="创作">
-              <!-- Create icon -->
+            <RouterLink :to="{name: 'create-index'}"  active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="创作">
               <CreateIcon />
               <span class="is-drawer-close:hidden text-base whitespace-nowrap ml-2">创作</span>
-            </button>
+            </RouterLink>
           </li>
         </ul>
       </div>
