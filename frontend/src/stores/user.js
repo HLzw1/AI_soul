@@ -5,11 +5,12 @@ import {defineStore} from "pinia";
 import {ref} from "vue";
 
 export const useUserStore = defineStore('user', ()=>{
-    const id = ref('')
+    const id = ref(0)
     const username = ref('')
     const photo = ref('')
     const profile = ref('')
     const accessToken = ref('')
+    const hasPulledUserInfo = ref(false)
 
     //判断是否登录
     function isLogin(){
@@ -37,6 +38,10 @@ export const useUserStore = defineStore('user', ()=>{
         profile.value = ''
     }
 
+    function setHasPulledUserInfo(newStatus){
+        hasPulledUserInfo.value = newStatus
+    }
+
     return {
         id,
         username,
@@ -47,5 +52,7 @@ export const useUserStore = defineStore('user', ()=>{
         setAccessToken,
         setUserInfo,
         logout,
+        hasPulledUserInfo,
+        setHasPulledUserInfo,
     }
 })
