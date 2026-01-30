@@ -10,7 +10,9 @@ import UserMenu from "@/components/navbar/UserMenu.vue";
 
 const user = useUserStore()
 </script>
-
+<!--类似于首页，判断是否登录跳转；；；
+    并且点击跳转
+-->
 <template>
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />

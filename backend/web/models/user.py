@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.timezone import now, localtime
 
+#创建数据库，并且为属性设置默认值
 
 def photo_upload_to(instance, filename):
     ext = filename.split('.')[-1]

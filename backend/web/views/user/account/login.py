@@ -5,6 +5,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from web.models.user import UserProfile
 
+#实现接口，后面将结合js/http/api，在前端页面调用这个接口，对应前端页面LoginIndex
 
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
@@ -17,7 +18,7 @@ class LoginView(APIView):
                 })
             user = authenticate(username=username, password=password)   #认证用户密码
             if user:
-                user_profile = UserProfile.objects.get(username=username)
+                user_profile = UserProfile.objects.get(user = user)
                 refresh = RefreshToken.for_user(user)           #生成jwt
                 response = Response({                       #保存access
                     'result': 'success',

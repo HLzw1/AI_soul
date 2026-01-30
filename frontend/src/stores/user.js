@@ -5,11 +5,11 @@ import {defineStore} from "pinia";
 import {ref} from "vue";
 
 export const useUserStore = defineStore('user', ()=>{
-    const id = ref('1')
-    const username = ref('222')
+    const id = ref('')
+    const username = ref('')
     const photo = ref('')
-    const profile = ref('111')
-    const accessToken = ref('111')
+    const profile = ref('')
+    const accessToken = ref('')
 
     //判断是否登录
     function isLogin(){
