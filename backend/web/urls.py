@@ -5,12 +5,15 @@ from web.views.index import index
 from web.views.user.account.logout import LogoutView
 from web.views.user.account.register import RegisterView
 from web.views.user.account.refresh_token import RefreshTokenView
+from web.views.user.profile.update import UpdateProfileView
+
 urlpatterns = [
     path('api/user/account/login/', LoginView.as_view(), name='login'),
     path('api/user/account/logout/', LogoutView.as_view(), name='logout'),
     path('api/user/account/register/', RegisterView.as_view(), name='register'),
     path('api/user/account/refresh_token/', RefreshTokenView.as_view(), name='refresh_token'),
     path('api/user/account/get_user_info/', GetUserInfoView.as_view(), name='get_user_info'),
+    path('api/user/profile/update/', UpdateProfileView.as_view(), name='update_profile'),
     path('', index),
 
     # 正则表达式排除所有后端路由并返回前端路由index.html前端路由（有router)
